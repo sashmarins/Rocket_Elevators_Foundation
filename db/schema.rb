@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_13_172103) do
+ActiveRecord::Schema.define(version: 2022_07_25_152257) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -146,6 +146,24 @@ ActiveRecord::Schema.define(version: 2022_07_13_172103) do
     t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
+  create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.integer "author", null: false
+    t.integer "building_id", null: false
+    t.integer "battery_id", null: false
+    t.integer "column_id"
+    t.integer "elevator_id"
+    t.integer "employee_id"
+    t.datetime "intervention_started"
+    t.datetime "intervention_ended"
+    t.string "result", default: "Incomplete"
+    t.text "report"
+    t.string "status", default: "Pending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_interventions_on_customer_id"
+  end
+
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "company_name"
@@ -198,5 +216,6 @@ ActiveRecord::Schema.define(version: 2022_07_13_172103) do
   add_foreign_key "customers", "users"
   add_foreign_key "elevators", "columns"
   add_foreign_key "employees", "users"
+  add_foreign_key "interventions", "customers"
   add_foreign_key "quotes", "users"
 end

@@ -1,0 +1,111 @@
+<%= form_with scope: :intervention, url: intervention_path, local: true do |iform| %>
+<section>
+    <div class="container">
+
+        <h1>Request an Intervention:</h1>
+
+<%# CUSTOMERS %>
+
+            <div class="row" id="customer-email-div">
+                <div class="col-md-6">
+                    <label for="customer-email">Your email</label>
+                    <select class="form-select" name="customer-email" id="customer-email">
+                        <option selected>Select Your e-mail</option>
+                        <option value="1">felix@gmail.com</option>
+                        <option value="2">hunterbiden@hotmail.gov</option>
+                        <option value="3">lukadoncic@slovenia.net</option>
+                    </select>
+                </div>
+            </div>
+
+<%# BUILDINGS %>
+
+            <div class="row" id="customer-building-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-building">Building Requiring Maintenence</label>
+                    <select class="form-select" name="customer-building" id="customer-building">
+                        <option selected>Select Your Building</option>
+                        <option value="1">Trump Tower</option>
+                        <option value="2">Pentagon</option>
+                        <option value="3">Personal Mansion</option>
+                    </select>
+                </div>
+            </div>
+                
+<%# BATTERIES %>
+
+            <div class="row" id="customer-battery-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-battery">Battery Requiring Maintenence</label>
+                    <select class="form-select" name="customer-battery" id="customer-battey">
+                        <option selected>Select Your Battery</option>
+                        <option value="1">Battery 1</option>
+                        <option value="2">Battery 2</option>
+                        <option value="3">Battery 3</option>
+                    </select>
+                </div>
+            </div>
+
+<%# COLUMNS %>
+
+            <div class="row" id="customer-column-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-column">Column Requiring Maintenence</label>
+                    <select class="form-select" name="customer-column" id="customer-column">
+                        <option value="nullcolumn" selected>No Column Requiring Maintenence</option>
+                        <option value="1">Column 1</option>
+                        <option value="2">Column 2</option>
+                        <option value="3">Column 3</option>
+                    </select>
+                </div>
+            </div>
+
+<%# ELEVATORS %>
+
+            <div class="row" id="customer-elevator-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-elevator">Elevator Requiring Maintenence</label>
+                    <select class="form-select" name="customer-elevator" id="customer-elevator">
+                        <option value="nullelevator" selected>No Elevator Requiring Maintenence</option>
+                        <option value="1">Elevator 1</option>
+                        <option value="2">Elevator 2</option>
+                        <option value="3">Elevator 3</option>
+                    </select>
+                </div>
+            </div>
+
+<%# EMPLOYEES %>
+
+            <div class="row" id="customer-employee-div">
+                <div class="col-md-6">
+                    <label for="customer-employee">Preferred Employee</label>
+                    <select class="form-select" name="customer-employee" id="customer-employee">
+                        <option value="nullemployee" selected>No preference</option>
+                        <option value="1">Mathieu Houde</option>
+                        <option value="2">David Amyot</option>
+                        <option value="3">Eileen Ai</option>
+                    </select>
+                </div>
+            </div>
+
+<%# DESCRIPTION %>
+
+            <div class="row" id="intervention-description-div">
+                <div class="mb-3">
+                    <label for="intervention-description">Intervention Description</label>
+                    <textarea class="form-control" id="intervention-description" name="intervention-description" rows="3">
+                </div>
+            </div>
+
+<%# SUBMIT %>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <%= form.submit %>
+                </div>
+            </div>
+
+    </div>
+</section>
+
+<% end %>
