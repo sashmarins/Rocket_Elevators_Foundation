@@ -1,0 +1,93 @@
+<%= form_with scope: :intervention, url: intervention_path, local: true do |form| %>
+<section>
+    <div class="container">
+
+        <h1>Request an Intervention:</h1>
+
+<%# CUSTOMERS %>
+
+            <div class="row" id="customer-email-div">
+                <div class="col-md-6">
+                    <label for="customer-email">Customer email</label>
+                    <select class="form-select" name="customer-email" id="customer-email">
+                        <option selected>Select Customer e-mail</option>
+                    </select>
+                </div>
+            </div>
+
+<%# BUILDINGS %>
+
+            <div class="row" id="customer-building-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-building">Building Requiring Maintenence</label>
+                    <select class="form-select" name="customer-building" id="customer-building">
+                        <option selected>Select Building</option>
+                    </select>
+                </div>
+            </div>
+                
+<%# BATTERIES %>
+
+            <div class="row" id="customer-battery-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-battery">Battery Requiring Maintenence</label>
+                    <select class="form-select" name="customer-battery" id="customer-battery">
+                        <option selected>Select Your Battery</option>
+                    </select>
+                </div>
+            </div>
+
+<%# COLUMNS %>
+
+            <div class="row" id="customer-column-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-column">Column Requiring Maintenence</label>
+                    <select class="form-select" name="customer-column" id="customer-column">
+                        <option value="" selected>No Column Requiring Maintenence</option>
+                    </select>
+                </div>
+            </div>
+
+<%# ELEVATORS %>
+
+            <div class="row" id="customer-elevator-div" style="display:none">
+                <div class="col-md-6">
+                    <label for="customer-elevator">Elevator Requiring Maintenence</label>
+                    <select class="form-select" name="customer-elevator" id="customer-elevator">
+                        <option value="" selected>No Elevator Requiring Maintenence</option>
+                    </select>
+                </div>
+            </div>
+
+<%# EMPLOYEES %>
+
+            <div class="row" id="customer-employee-div">
+                <div class="col-md-6">
+                    <label for="customer-employee">Who should deal with this intervention?</label>
+                    <select class="form-select" name="customer-employee" id="customer-employee">
+                        <option value="" selected>No preference</option>
+                    </select>
+                </div>
+            </div>
+
+<%# DESCRIPTION %>
+
+            <div id="intervention-description-div">
+                <div class="mb-8">
+                    <label for="intervention-description">Intervention Description</label>
+                    <textarea class="form-control" id="intervention-description" name="intervention-description" rows="6"></textarea>
+                </div>
+            </div>
+
+<%# SUBMIT %>   <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <%= form.submit %>
+                </div>
+            </div>
+
+    </div>
+</section>
+
+<% end %>

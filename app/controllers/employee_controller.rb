@@ -1,9 +1,7 @@
 class EmployeeController < ApplicationController
-    before_action :authenticate_user!
-    load_and_authorize_resource
+    respond_to :json, :html
+    def search
+        @employee_all = Employee.all
+        respond_with(@employee_all)
+    end
 end
-
-# def show
-#     @admin = Admin.find(params[:id])
-#     authorize! :show, @admin
-#   end
