@@ -9,7 +9,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
     
     <meta charset="utf-8" />
     <meta name="description" content="" />
@@ -110,6 +109,12 @@
                             <li>
                                 <!-- CONTACT -->
                                 <%= link_to "CONTACT", "#{root_path}#contact", 'data-turbolinks': false %>
+                            </li>
+                            <li>
+                                <!-- INTERVENTION -->
+                                <% if user_signed_in? && current_user.is_admin == true %>
+                                    <%= link_to "INTERVENTIONS", interventionform_path %>
+                                <% end %>
                             </li>
                                 <li>
                                     <!-- LOGIN -->
