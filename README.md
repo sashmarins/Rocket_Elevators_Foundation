@@ -56,6 +56,7 @@ You can add environment variables as key/value pairs
 * FRESHDESK :
 When a customer sends quote request or contact request, new ticket is created on FreshDesk API, domain name codeboxx777.freshdesk.com 
 The ticket contanins client's contact information and information that the client fills up in quote request or contact form, which customer support of Rocket Elevators can work with, in order to complete client's request.
+If an employee fills out the --brand new-- interventions form, a new ticket will be created on freshdesk domain davemustaine.freshdesk.com, containing details of the intervention.
 gems used: 'rest-client', 'json'
 
 * AMAZON POLLY
