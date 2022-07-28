@@ -60,3 +60,18 @@ gems used: 'rest-client', 'json'
 
 * AMAZON POLLY
  When the admin successfully logged in, and go to Admin page. the Amazon Polly function will be triggered and API being called, which  receiving a text and sends the audio file back with all information that admin can play via simple web browser audio player.
+
+* DROPBOX 
+ When a file is attached in the leads form, and the email indicated in the lead form can be connected to a customer email in the database, the file will save in dropbox, and the file can also be viewed in the admin page. The file in dropbox is the actual file uploaded, but it cannot be viewed on the site as there is no extension (WORKING ON FIXING THIS AS WELL AS THE PATH)
+ 
+ * Twilio
+  When an elevator status is changed to intervention, a text indicating certain information will be sent to either cole's or tim's phone number.
+  
+  * Slack
+  When any elevator status is changed at all, a message will be sent in the rocket elevators slack server indicating what elevator had the status change, and what the status has been changed to. 
+  
+  *Mailjet
+  Will send an automated email thanking a user for filling out the contact form on the home page, to the email that was filled out in the email. 
+  
+  * Google maps
+  not working at all (WORKING ON FIXING IT)
