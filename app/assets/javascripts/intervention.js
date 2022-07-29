@@ -72,7 +72,6 @@
             $('#customer-battery-div').show();
             $('#customer-battery').append(`<option value="">Select The Battery Requiring Maintenence</option>`);
             var building = $('#customer-building').val();
-            console.log(building)
             $.ajax({
                 type: "GET",
                 url: "/battery/search",

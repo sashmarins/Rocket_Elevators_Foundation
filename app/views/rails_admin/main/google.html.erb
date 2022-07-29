@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-
-<% link_to "Gmaps", google_path %>
-
-<html>
-    <head>
-    </head>
+<section>
+    <div class="container">
     <body>
         <style>
         #map {
@@ -14,20 +9,8 @@
         </style>
     <h3>Google Maps Demo</h3>
     <!--The Div element for the map -->
-    <div id="map"></div>
+    <div name="map" id="map"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQaAprLTdxv6WAYiy5SZSOkQ-C97fcBSs&callback=initMap"></script>
-    <script> 
-
-
-        function initMap() {
-        let uluru = {lat: 39.8283, lng: -98.5795};
-        let map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: uluru}
-        );
-        let marker = new google.maps.Marker({position: uluru, map: map})};
-
-        var informationArray = <%= raw @info_array %> ;
-
 
     // function createMarkers(address) {
     //     let marker = new google.maps.Marker({positiion: address, map: map})
@@ -44,9 +27,9 @@
             
 
             // sets up the map
-    </script>
-    </body>
-</html>
+        </body>
+   </div>
+</section>
 
     <%# function allAdress() {
         allAddress.all.push(class Address);
