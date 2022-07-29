@@ -2,6 +2,8 @@ LIVE WEBSITE ON dave-mustaine.com
 
 # README
 
+Restfulapi github repo link: https://github.com/sashmarins/Restful_Consolidation
+
 * Ruby version
 2.7.6
 * Rails version
