@@ -22,19 +22,19 @@ class InterventionController < ApplicationController
         @intervention.building_id = params["customer-building"]
         @intervention.battery_id = params["customer-battery"]
 
-        if params["customer-column"] == "" || 0
+        if params["customer-column"] == ""
             @intervention.column_id = nil
         else
             @intervention.column_id = params["customer-column"]
         end
 
-        if params["customer-elevator"] == "" || 0
+        if params["customer-elevator"] == ""
             @intervention.elevator_id = nil
         else
             @intervention.elevator_id = params["customer-elevator"]
         end
 
-        if params["customer-employee"] == "" || 0
+        if params["customer-employee"] == ""
             @intervention.employee_id = nil
         else
             @intervention.employee_id = params["customer-employee"]
@@ -77,7 +77,7 @@ class InterventionController < ApplicationController
                         email: customer_email[:email],
                         subject: "New Intervention Request from #{author_name[:first_name]} #{author_name[:last_name]} #{Time.now}",
                         description: "#{author_first_name} has requested that #{offloaded_first_name} #{offloaded_last_name} completes an intervention at <br/>
-                        building #{@intervention.building_id}, battery #{@intervention.battery_id}. The requester describes the intervention as #{@intervention.report}"
+                        #{customer_email[:company_name]} building #{@intervention.building_id}, battery #{@intervention.battery_id}. The requester describes the intervention as #{@intervention.report}"
                     }
                 elsif @intervention.column_id != nil && @intervention.elevator_id == nil
                     intervention_payload =  {
@@ -87,7 +87,7 @@ class InterventionController < ApplicationController
                         email: customer_email[:email],
                         subject: "New Intervention Request from #{author_name[:first_name]} #{author_name[:last_name]} #{Time.now}",
                         description: "#{author_first_name} has requested that #{offloaded_first_name} #{offloaded_last_name} completes an intervention at <br/>
-                             building #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id}. <br/>
+                        #{customer_email[:company_name]} building #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id}. <br/>
                              The requester describes the intervention as #{@intervention.report}"
                     }
                 else 
@@ -98,7 +98,7 @@ class InterventionController < ApplicationController
                     email: customer_email[:email],
                     subject: "New Intervention Request from #{author_name[:first_name]} #{author_name[:last_name]} #{Time.now}",
                     description: "#{author_first_name} has requested that #{offloaded_first_name} #{offloaded_last_name} completes an intervention at <br/>
-                        building #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id}, elevator #{@intervention.elevator_id} <br/>
+                    #{customer_email[:company_name]} building #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id}, elevator #{@intervention.elevator_id} <br/>
                         The requester describes the intervention as #{@intervention.report}"
                 }
                 end
