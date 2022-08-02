@@ -1,5 +1,5 @@
 RailsAdmin.config do |config|
-  require Rails.root.join('lib', 'rails_admin', 'google.rb')
+  require Rails.root.join('lib', 'rails_admin', 'googlemapsadmin.rb')
   require Rails.root.join('lib', 'rails_admin', 'amazon.rb')
 
   ### Popular gems integration
@@ -44,7 +44,7 @@ RailsAdmin.config do |config|
     # edit
     # delete
     # show_in_app
-    google
+    googlemapsadmin
     amazon
 
     ## With an audit adapter, you can add:

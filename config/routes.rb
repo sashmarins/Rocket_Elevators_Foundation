@@ -8,6 +8,7 @@ RailsAdmin::Engine.routes.draw do
   end
 
   get "polly", to: "rails_admin.polly_path"
+  # get "googlemapsadmin", to: "rails_admin.googlemapsadmin_path"
 end
 
 Rails.application.routes.draw do
@@ -77,6 +78,12 @@ Rails.application.routes.draw do
   
   resources :employee do 
     collection do 
+      get :search
+    end
+  end
+
+  resources :address do
+    collection do
       get :search
     end
   end

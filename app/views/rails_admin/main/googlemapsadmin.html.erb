@@ -1,0 +1,55 @@
+
+
+<section>
+    <div class="container">
+        <body>
+            <style>
+            #map {
+                width: 100%;
+                height: 400px;
+            }
+            </style>
+            <h3>Buildings with Rocket Elevators</h3>
+            <!--The Div element for the map -->
+            <div name="map" id="map"></div>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQaAprLTdxv6WAYiy5SZSOkQ-C97fcBSs&callback=initMap"></script>
+            <script>
+            //= require jquery
+                function initMap() {
+                    uluru = {lat: 39.8283, lng: -98.5795};
+                    map = new google.maps.Map(
+                        document.getElementById('map'), {zoom: 4, center: uluru}
+                    );
+                    createMarkers();
+                };
+
+                function createMarkers () {
+                    $.ajax({
+                        type: "GET",
+                        url: "/address/search",
+                        datatype: "json",
+                        success: function(result) {
+                            for (address in result) {
+                                let contentString = `${result[address].street_address}`
+                                let infowindow = new google.maps.InfoWindow({
+                                    content: contentString
+                                })
+                                let coords = {lat: result[address].latitude, lng: result[address].longitude};
+                                let marker = new google.maps.Marker({position: coords, map: map});
+                                marker.addListener("click", () => {
+                                    infowindow.open({
+                                        anchor: marker,
+                                        map,
+                                        shouldFocus: false
+                                    })
+                                })
+                            }
+                        }
+
+                    })
+                };
+
+            </script>
+        </body>
+   </div>
+</section>
