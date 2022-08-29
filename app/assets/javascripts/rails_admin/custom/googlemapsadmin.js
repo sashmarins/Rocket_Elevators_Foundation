@@ -9,6 +9,6 @@ $(document).ready(function () {
     //     script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQaAprLTdxv6WAYiy5SZSOkQ-C97fcBSs&callback=initMap";
     //     $('#map').append(script);
     // };
-
+    
    
 })
