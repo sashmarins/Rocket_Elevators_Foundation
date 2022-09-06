@@ -152,3 +152,6 @@ gem 'graphiql-rails', group: :development
 
 # newrelic
 gem 'newrelic_rpm'
+
+#unf_ext
+gem 'unf_ext', '~> 0.0.7.1'
