@@ -149,3 +149,6 @@ gem 'mailjet', '~> 1.7'
 #graphql
 gem 'graphql', '~> 2.0', '>= 2.0.12'
 gem 'graphiql-rails', group: :development
+
+# newrelic
+gem 'newrelic_rpm'
