@@ -17,6 +17,7 @@ set :bundle_without, "production"
 set :deploy_to, "/home/ubuntu/apps/#{app}"
 set :linked_dirs, %w{tmp/pids tmp/sockets log}
 set :linked_files, %w{config/database.yml config/application.yml config/database_pg.yml}
+set :ssh_options, { forward_agent: true }
 
 # role-based syntax
 # ==================
