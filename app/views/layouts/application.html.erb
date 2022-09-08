@@ -24,7 +24,12 @@
         var plugin_path = 'assets/plugins/';
     </script>
 
-    <!-- Google tag (gtag.js) -->
+  </head>
+
+
+  
+  <body class="smoothscroll enable-animation">
+      <!-- Google tag (gtag.js) -->
     <% if Rails.env.production? %>
     <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Rails.application.credentials.dig(:google_analytics) %>"></script>
     <script>
@@ -35,12 +40,6 @@
         gtag('config', ENV["GOOGLE_ANALYTICS"]);
     </script>
     <% end %>
-
-  </head>
-
-
-  
-  <body class="smoothscroll enable-animation">
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
