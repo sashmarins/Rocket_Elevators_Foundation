@@ -155,3 +155,6 @@ gem 'newrelic_rpm'
 
 #unf_ext
 gem 'unf_ext', '~> 0.0.7.1'
+
+#google analytics 
+gem 'google-analytics-rails', '1.1.0'
