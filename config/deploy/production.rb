@@ -31,9 +31,6 @@ role :app, %w{ubuntu@143.244.173.67}
 role :web, %w{ubuntu@143.244.173.67}
 role :db,  %w{ubuntu@143.244.173.67}
 
-# Google Analytics
-GA.tracker = "G-BBCFG2CERE"
-
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
